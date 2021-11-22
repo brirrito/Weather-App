@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Weather App</title>
+</head>
+<body>
+  <div id="content">
+    <div class="search-container">
+      <input class="search" type="text" placeholder="Enter City Name" />
+    </div>
+    <p class="error">No matching city found!</p>
+    <div class="weather-info-container">
+      <div class="weather-info anim">
+        <p class="general-info">clear sky</p>
+        <p class="location">Winchester, Virginia, USA</p>
+        <div class="detailed-info">
+          <p class="temperature-celcius">20<sup class="main-temp">&#8451</sup></p>
+          <p class="temperature-fahrenheit">20<sup class="main-temp">&#8457</sup></p>
+          <div class="divider"></div>
+          <div class="misc-info">
+            <p class="feels-like-celcius">Feels like: 20<sup class="alt-temp">&#8451</sup></p>
+            <p class="feels-like-fahrenheit">Feels like: 20<sup class="alt-temp">&#8457</sup></p>
+            <p class="wind">Wind: 3 km/h</p>
+            <p class="humidity">Humidity: 35%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+<script src='main.js'></script>
+</html>
