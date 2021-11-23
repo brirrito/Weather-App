@@ -1,31 +1,16 @@
-async function getWeatherData(city) {
-  const repsonse = await fetch(`https.//api.openweathermap.org/data/2.5/weather?q=${city}#appid=16b79e03843e3ed46cccf3801b105e29`, {mode: 'cors'});
+import logic from './functions/logic';
+import view from './functions/view';
 
-  if (repsonse.status === 400 ||response.status === 404) {
-    return;
-  } else {
-    const data = await response.json();
+const searchForm = document.getElementById('searchForm');
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
 
-    const weather = {
-      id: data.weather[0].id,
-      desc: data.weather[0].description,
-      main: data.weather[0].main,
-      country: data.sys.country,
-      mainTemp: {
-        f: KtoFahrenheit(data.main.temp),
-        c: KtoCelcius(data.main.temp)
-      },
-      temps: {
-        feelsLike: {
-          f: KtoFahrenheit(data.main.feels_like),
-          c: KtoCelcius(data.main.feels_like)
-        }
-      },
-      humidity: data.main.humidity,
-      city: data.name.toUpperCase()
-    }
-    console.log(weather);
-  }
-} 
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+});
 
-console.log('weather app hello');
+searchBtn.addEventListener('click', async() => {
+  if (searchInput.value === '') return;
+  const weatherData = await logic.getData(searchInput.value);
+  view.setSearchResult(weatherData);
+});
