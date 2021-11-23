@@ -14,9 +14,9 @@ const view = (() => {
     const wind = document.getElementById('wind');
 
     cityName.textContent = `${weatherData.cityName}`;
-    temperature.textContent = `${Math.round(1.8 * weatherData.temperature + 32)} °F`;
-    feelsLike.textContent = `Feels like: ${Math.round(1.8 * weatherData.feelsLike + 32)} °F`;
-    humidity.textContent = `Humidity: ${weatherData.humidity} %`;
+    temperature.textContent = `${Math.round(1.8 * weatherData.temperature + 32)}°F`;
+    feelsLike.textContent = `Feels like: ${Math.round(1.8 * weatherData.feelsLike + 32)}°F`;
+    humidity.textContent = `Humidity: ${weatherData.humidity}%`;
     wind.textContent = `Wind: ${Math.round(10 * weatherData.windSpeed * 0.62137) / 10 } m/h`;
   }
 
